@@ -109,7 +109,9 @@ class WebhookHandler(webapp2.RequestHandler):
             if text == '/start':
                 reply('Bot enabled')
                 setEnabled(chat_id, True)
-            elif text == '/stop':
+            elif text == '/jorge':
+								reply('Jorge es un tio de puta madre, uno de esos que qeudan pocos en este mundo, en resumen una persona del copon de amable, entranyable y alegre')
+						elif text == '/stop':
                 reply('Bot disabled')
                 setEnabled(chat_id, False)
             elif text == '/image':
@@ -121,12 +123,12 @@ class WebhookHandler(webapp2.RequestHandler):
                 img.save(output, 'JPEG')
                 reply(img=output.getvalue())
             else:
-                reply('What command?')
+                reply('comoorr?')
 
         # CUSTOMIZE FROM HERE
 
-        elif 'who are you' in text:
-            reply('telebot starter kit, created by yukuku: https://github.com/yukuku/telebot')
+        elif 'quien cojones es jorge' in text:
+            reply('es un tio de puta madre, uno de esos que qeudan pocos en este mundo, en resumen una persona del copon de amable, entranyable y alegre')
         elif 'what time' in text:
             reply('look at the top-right corner of your screen!')
         else:
@@ -135,8 +137,8 @@ class WebhookHandler(webapp2.RequestHandler):
                 back = resp1.get('res')
                 if not back:
                     reply('okay...')
-                elif 'I HAVE NO RESPONSE' in back:
-                    reply('you said something with no meaning')
+                elif 'Hacendado me hayo' in back:
+                    reply('0 sentido tiene lo que has dicho')
                 else:
                     reply(back)
             else:
