@@ -131,16 +131,16 @@ class WebhookHandler(webapp2.RequestHandler):
             reply('es un tio de puta madre, uno de esos que qeudan pocos en este mundo, en resumen una persona del copon de amable, entranyable y alegre')
         elif 'what time' in text:
             reply('look at the top-right corner of your screen!')
-        else:
-            if getEnabled(chat_id):
-                resp1 = json.load(urllib2.urlopen('http://www.simsimi.com/requestChat?lc=en&ft=1.0&req=' + urllib.quote_plus(text.encode('utf-8'))))
-                back = resp1.get('res')
-                if not back:
-                    reply('okay...')
-                elif 'Hacendado me hayo' in back:
-                    reply('0 sentido tiene lo que has dicho')
-                else:
-                    reply(back)
+        #else:
+         #   if getEnabled(chat_id):
+          #      resp1 = json.load(urllib2.urlopen('http://www.simsimi.com/requestChat?lc=en&ft=1.0&req=' + urllib.quote_plus(text.encode('utf-8'))))
+           #     back = resp1.get('res')
+            #    if not back:
+             #       reply('okay...')
+              #  elif 'Hacendado me hayo' in back:
+               #     reply('0 sentido tiene lo que has dicho')
+                #else:
+                 #   reply(back)
             else:
                 logging.info('not enabled for chat_id {}'.format(chat_id))
 
